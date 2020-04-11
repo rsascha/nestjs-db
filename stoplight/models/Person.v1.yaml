@@ -1,0 +1,15 @@
+title: Person
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+  phoneNumber:
+    type: string
+  group:
+    $ref: ./Group.v1.yaml
+required:
+  - id
+  - name

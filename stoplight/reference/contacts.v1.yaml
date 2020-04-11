@@ -1,0 +1,19 @@
+openapi: 3.0.0
+info:
+  title: Contacts
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths: {}
+components:
+  schemas:
+    ContactList:
+      title: ContactList
+      type: object
+      properties:
+        id:
+          type: string
+        persons:
+          type: array
+          items:
+            $ref: ../models/Person.v1.yaml
