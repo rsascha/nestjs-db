@@ -1,8 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { createConnection, getConnection } from 'typeorm';
+import { User } from './entity/user';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  async getHello(): Promise<User[]> {
+
+    const connection = getConnection();
+    return connection.manager.find(User).then(users => {
+        console.log("Loaded users: ", users);
+        return users;
+    });
   }
 }
