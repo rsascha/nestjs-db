@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersService } from './users/users.service';
 import { UsersModule } from './users/users.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entity/user';
+import { Photo } from './entity/photo';
 
 @Module({
     imports: [
@@ -16,8 +17,9 @@ import { User } from './entity/user';
             username: 'root',
             password: 'password',
             database: 'nestjs-db',
-            entities: [User],
+            entities: [User, Photo],
             synchronize: true,
+            autoLoadEntities: true,
         }),
     ],
     controllers: [AppController],

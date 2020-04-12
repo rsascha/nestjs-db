@@ -34,7 +34,7 @@ I'm just testing to connect a database to NestJS application
 
 <https://typeorm.io/#/using-cli/installing-cli>
 
-<https://typeorm.io/#/migrations/creating-a-new-migration>
+<https://typeorm.io/#/migrations>
 
 ## Generate Code
 
@@ -66,4 +66,15 @@ createConnection().then(async connection => {
     console.log("Here you can setup and run express/koa/any other framework.");
 
 }).catch(error => console.log(error));
+```
+
+```typescript
+
+const p1 = new Photo('Photo Number 1');
+const p2 = new Photo('Photo Number 2');
+const u = new User('Max', 'Power', 99);
+u.photos = [p1, p2];
+const manager = queryRunner.connection.manager;
+await manager.save(u);
+
 ```
