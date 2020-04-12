@@ -9,10 +9,10 @@ async function bootstrap() {
   const logger = new Logger("main -> bootstrap()");
   
   const options = new DocumentBuilder()
-    .setTitle('nestjs-dh example')
-    .setDescription('The nestjs-dh API description')
+    .setTitle('nestjs-db example')
+    .setDescription('The nestjs-db API description')
     .setVersion('0.1')
-    .addTag('nestjs-dh')
+    .addTag('nestjs-db')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('swagger', app, document);
