@@ -16,6 +16,13 @@ I'm just testing to connect a database to NestJS application
 
 <!-- /code_chunk_output -->
 
+## DB Migrations
+
+* `npm run typeorm:migration:create`: Create a new empty migration to write the `up` and `down` scripts manually.
+* `npm run typeorm:migration:generate`: Change entities in the code, then run this command to generate a migration script.
+* `npm run typeorm:migration:run`: Apply changes to the database (execute `up`).
+* `npm run typeorm:migration:revert`: Rollback changes for the database (execute `down`).
+
 ## References
 
 ### Stoplight 
